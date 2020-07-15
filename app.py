@@ -17,7 +17,7 @@ line_bot_api = LineBotApi(ACCESS_TOKEN)
 handler = WebhookHandler(SECRET)
 
 
-@app.route("/callback",methods=['POST'])
+@app.route("/callback", methods=['POST'])
 def callback():
     signature = request.headers['X-Line-Signature']
 
@@ -31,8 +31,8 @@ def callback():
     return'OK'
 
 
-@handler.add(MessageEvent, message=TextMessage)
-def handle_message(event):
+@handler.add(MessageEvent, message=ImageMessage)
+def handle_image_message(event):
     message_content = line_bot_api.get_message_content(event.message.id)
     # 取得した画像ファイル
     with open("static/"+event.message.id+".jpg","wb") as f:
