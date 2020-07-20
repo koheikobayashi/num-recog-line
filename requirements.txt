@@ -1,14 +1,39 @@
+absl-py==0.9.0
+astor @ file:///home/conda/feedstock_root/build_artifacts/astor_1593610464257/work
 certifi==2020.6.20
 chardet==3.0.4
 click==7.1.2
 Flask==1.1.2
 future==0.18.2
+gast==0.3.3
+google-pasta==0.2.0
+grpcio @ file:///Users/runner/miniforge3/conda-bld/grpcio_1594576812766/work
 gunicorn==20.0.4
+h5py @ file:///Users/runner/miniforge3/conda-bld/h5py_1595110172609/work
 idna==2.10
+importlib-metadata @ file:///Users/runner/miniforge3/conda-bld/importlib-metadata_1593211385768/work
 itsdangerous==1.1.0
 Jinja2==2.11.2
+Keras==2.3.1
+Keras-Applications==1.0.8
+Keras-Preprocessing==1.1.0
 line-bot-sdk==1.16.0
+Mako==1.1.0
+Markdown @ file:///home/conda/feedstock_root/build_artifacts/markdown_1589366472132/work
 MarkupSafe==1.1.1
+numpy @ file:///Users/runner/miniforge3/conda-bld/numpy_1594931674956/work
+protobuf==3.12.3
+pygpu==0.7.6
+PyYAML==5.3.1
 requests==2.24.0
+scipy @ file:///Users/runner/miniforge3/conda-bld/scipy_1594922066423/work
+six @ file:///home/conda/feedstock_root/build_artifacts/six_1590081179328/work
+tensorboard==1.14.0
+tensorflow @ file:///Users/runner/miniforge3/conda-bld/tensorflow_1594833337001/work/tensorflow-1.14.0-cp36-cp36m-macosx_10_11_x86_64.whl
+tensorflow-estimator==1.14.0
+termcolor==1.1.0
+Theano==1.0.4
 urllib3==1.25.9
 Werkzeug==1.0.1
+wrapt==1.12.1
+zipp==3.1.0
