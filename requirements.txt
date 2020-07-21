@@ -16,7 +16,6 @@ Keras-Preprocessing==1.1.0
 line-bot-sdk==1.16.0
 Mako==1.1.0
 MarkupSafe==1.1.1
-numpy @ file:///Users/runner/miniforge3/conda-bld/numpy_1594931674956/work
 protobuf==3.12.3
 pygpu==0.7.6
 PyYAML==5.3.1
