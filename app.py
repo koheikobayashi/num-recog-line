@@ -20,6 +20,7 @@ FQDN = "https://dogcat-test.herokuapp.com"
 line_bot_api = LineBotApi(ACCESS_TOKEN)
 handler = WebhookHandler(SECRET)
 
+model = load_model('dog_cat.h5')
 
 @app.route("/callback", methods=['POST'])
 def callback():
@@ -60,5 +61,4 @@ def handle_image_message(event):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=text))
 
 if __name__ == "__main__":
-    model = load_model('dog_cat.h5')
     app.run()
