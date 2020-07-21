@@ -39,9 +39,10 @@ def callback():
 def handle_image_message(event):
     message_content = line_bot_api.get_message_content(event.message.id)
     # 取得した画像ファイル
-    with open("static/"+event.message.id+".jpg","wb") as f:
+    with open("static/"+event.message.id+".jpg", "wb") as f:
         f.write(message_content.content)
-        test_url = FQDN+"/static/"+event.message.id+".jpg"
+
+        test_url = "./static/"+event.message.id+".jpg"
 
         img = image.load_img(test_url, target_size=(150, 150))
         x = image.img_to_array(img)
