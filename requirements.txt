@@ -15,7 +15,6 @@ Keras-Applications==1.0.8
 Keras-Preprocessing==1.1.0
 line-bot-sdk==1.16.0
 Mako==1.1.0
-Markdown @ file:///home/conda/feedstock_root/build_artifacts/markdown_1589366472132/work
 MarkupSafe==1.1.1
 numpy @ file:///Users/runner/miniforge3/conda-bld/numpy_1594931674956/work
 protobuf==3.12.3
