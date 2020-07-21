@@ -29,7 +29,7 @@ requests==2.24.0
 scipy @ file:///Users/runner/miniforge3/conda-bld/scipy_1594922066423/work
 six @ file:///home/conda/feedstock_root/build_artifacts/six_1590081179328/work
 tensorboard==1.14.0
-tensorflow @ file:///Users/runner/miniforge3/conda-bld/tensorflow_1594833337001/work/tensorflow-1.14.0-cp36-cp36m-macosx_10_11_x86_64.whl
+tensorflow @ file:///Users/runner/miniforge3/conda-bld/tensorflow_1594833337001/work/
 tensorflow-estimator==1.14.0
 termcolor==1.1.0
 Theano==1.0.4
