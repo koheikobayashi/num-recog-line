@@ -20,8 +20,6 @@ FQDN = "https://dogcat-test.herokuapp.com"
 line_bot_api = LineBotApi(ACCESS_TOKEN)
 handler = WebhookHandler(SECRET)
 
-model = load_model('dog_cat.h5')
-
 @app.route("/callback", methods=['POST'])
 def callback():
     signature = request.headers['X-Line-Signature']
@@ -50,6 +48,7 @@ def handle_image_message(event):
         x = np.expand_dims(x, axis=0)
         x = x / 255.0
 
+        model = load_model('dog_cat.h5')
         result_predict = model.predict(x)
 
         if result_predict < 0.5:
