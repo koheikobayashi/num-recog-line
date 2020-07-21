@@ -6,7 +6,6 @@ Flask==1.1.2
 future==0.18.2
 gast==0.3.3
 google-pasta==0.2.0
-grpcio @ file:///Users/runner/miniforge3/conda-bld/grpcio_1594576812766/work
 gunicorn==20.0.4
 h5py @ file:///Users/runner/miniforge3/conda-bld/h5py_1595110172609/work
 idna==2.10
