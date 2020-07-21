@@ -7,7 +7,6 @@ future==0.18.2
 gast==0.3.3
 google-pasta==0.2.0
 gunicorn==20.0.4
-h5py @ file:///Users/runner/miniforge3/conda-bld/h5py_1595110172609/work
 idna==2.10
 importlib-metadata @ file:///Users/runner/miniforge3/conda-bld/importlib-metadata_1593211385768/work
 itsdangerous==1.1.0
