@@ -47,7 +47,7 @@ def handle_image_message(event):
         x = image.img_to_array(img)
         x = np.expand_dims(x, axis=0)
         x = x / 255.0
-
+        # モデルのロード
         model = load_model('dog_cat.h5')
         result_predict = model.predict(x)
 
