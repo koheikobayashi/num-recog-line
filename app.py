@@ -14,7 +14,7 @@ app = Flask(__name__)
 ACCESS_TOKEN = "gbU9ngnEG3tWv99t6pqmCo4eXDaWkEO0TBbFk7ML3LfrTw1A6eGXtjklverSbhJI4XUcVp0/XzFZxeMsFSvBqWLvbdJMqsU7dnQqSdTtWdN2cH2W4mEBD+WRZluLijX6zHKZDklkHWHvNdDooSJ2XQdB04t89/1O/w1cDnyilFU="
 SECRET = "d7674280e785bfe742b0062fd2562a22"
 
-FQDN = "https://dogcat-test.herokuapp.com"
+FQDN = "https://digit-num-recognition.herokuapp.com"
 
 
 line_bot_api = LineBotApi(ACCESS_TOKEN)
