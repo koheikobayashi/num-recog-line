@@ -11,8 +11,8 @@ from keras.preprocessing import image
 
 app = Flask(__name__)
 
-ACCESS_TOKEN = "Sdr1mE+hoLx7RXtdreaAegInEBX33ktIrmNbvCG3bj64ELcpMWzJP7KfbgCK8voTTEvWdb/scFfYSaIeUaUUNocxDUAbb+rwoZBphwVpRF/mhlE+bt3dGrQ/5rlTY2+IhwwoWTpdHdr7v1CbJ7AeEgdB04t89/1O/w1cDnyilFU="
-SECRET = "d1fec2f308c69fe2ff66481137cd3d64"
+ACCESS_TOKEN = "gbU9ngnEG3tWv99t6pqmCo4eXDaWkEO0TBbFk7ML3LfrTw1A6eGXtjklverSbhJI4XUcVp0/XzFZxeMsFSvBqWLvbdJMqsU7dnQqSdTtWdN2cH2W4mEBD+WRZluLijX6zHKZDklkHWHvNdDooSJ2XQdB04t89/1O/w1cDnyilFU="
+SECRET = "d7674280e785bfe742b0062fd2562a22"
 
 FQDN = "https://dogcat-test.herokuapp.com"
 
