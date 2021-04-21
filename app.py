@@ -47,6 +47,21 @@ def handle_image_message(event):
 
         test_url = "./static/"+event.message.id+".jpg"
 
+
+        img = cv2.imread(test_url) # ここに数字画像認識をしたい画像を入れます。事前に4等分を考慮して撮影した画像を利用
+        img = cv2.resize(img, (400,  100)) # サイズが調整されていない画像を入れた場合のエラー予防
+        #img = cv2.resize(img, (800,  200))  # 画像を横の幅800・高さ200ピクセルにリサイズするプログラム例
+
+
+        # 画像のトリミング [y1:y2, x1:x2]  （img = cv2.resize(img, (400,  100)) を使った場合のプログラム例
+
+        data1 = img[0:100, 0:100]     #yの範囲（縦）が0〜100・xの範囲（横）が0〜100までをトリミング
+        data2 = img[0:100, 100:200] #yの範囲（縦）が0〜100・xの範囲（横）が100〜200までをトリミング
+        data3 = img[0:100, 200:300] #yの範囲（縦）が0〜100・xの範囲（横）が200〜300までをトリミング
+        data4 = img[0:100, 300:400] #yの範囲（縦）が0〜100・xの範囲（横）が300〜400までをトリミング
+
+
+
         img = image.load_img(test_url, target_size=(150, 150))
         x = image.img_to_array(img)
         x = np.expand_dims(x, axis=0)
