@@ -9,6 +9,8 @@ from linebot.models import (MessageEvent, TextMessage, TextSendMessage, ImageMes
 from keras.models import load_model
 from keras.preprocessing import image
 
+import cv2 
+
 app = Flask(__name__)
 
 ACCESS_TOKEN = "gbU9ngnEG3tWv99t6pqmCo4eXDaWkEO0TBbFk7ML3LfrTw1A6eGXtjklverSbhJI4XUcVp0/XzFZxeMsFSvBqWLvbdJMqsU7dnQqSdTtWdN2cH2W4mEBD+WRZluLijX6zHKZDklkHWHvNdDooSJ2XQdB04t89/1O/w1cDnyilFU="
