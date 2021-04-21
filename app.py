@@ -45,7 +45,7 @@ def handle_image_message(event):
     # 取得した画像ファイル
     with open("static/"+event.message.id+".jpg", "wb") as f:
         f.write(message_content.content)
-
+    
     img = Image.open("static/"+event.message.id+".jpg")
     img_resize = img.resize((400, 100))
     img_resize.crop((0, 0, 100, 100)).save("static/"+event.message.id+"-test.jpg", quality=95)
@@ -55,12 +55,9 @@ def handle_image_message(event):
     x = x / 255.0
     model = load_model('color_model.h5')
     result_predict = model.predict_classes(x)
-    num[result_predict[0]]
+    n = num[result_predict[0]]
+    line_bot_api.reply_message(event.reply_token, TextSendMessage(text=n))
 
-
-
-    #line_bot_api.reply_message(event.reply_token,ImageSendMessage(original_content_url=FQDN+"/static/"+event.message.id+".jpg",preview_image_url=FQDN+"/static/"+event.message.id+".jpg"))
-    line_bot_api.reply_message(event.reply_token, TextSendMessage(text=num[result_predict[0]])
 
 if __name__ == "__main__":
     app.run()
