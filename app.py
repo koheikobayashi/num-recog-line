@@ -9,7 +9,6 @@ from linebot.models import (MessageEvent, TextMessage, TextSendMessage, ImageMes
 from keras.models import load_model
 from keras.preprocessing import image
 
-import cv2 
 
 
 
