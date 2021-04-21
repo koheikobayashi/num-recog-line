@@ -8,6 +8,7 @@ from linebot.models import (MessageEvent, TextMessage, TextSendMessage, ImageMes
 
 from keras.models import load_model
 from keras.preprocessing import image
+from PIL import Image
 
 
 
@@ -44,27 +45,22 @@ def handle_image_message(event):
     with open("static/"+event.message.id+".jpg", "wb") as f:
         f.write(message_content.content)
 
-        test_url = "./static/"+event.message.id+".jpg"
-
-
-
-
-
-        img = image.load_img(test_url, target_size=(150, 150))
+        im = Image.open("./static/"+event.message.id+".jpg")
+        im_crop = im.crop((0, 0, 100, 100)).save("./static/"+event.message.id+".jpg", quality=95)
+        #test_url = "./static/"+event.message.id+".jpg"
+        #img = image.load_img(test_url, target_size=(150, 150))
+        img = image.load_img(im_crop, grayscale=False, target_size=(28, 28))
         x = image.img_to_array(img)
         x = np.expand_dims(x, axis=0)
         x = x / 255.0
         # モデルのロード
-        model = load_model('dog_cat.h5')
+        # model = load_model('dog_cat.h5')
+        model = load_model('color_model.h5')
         result_predict = model.predict(x)
 
-        if result_predict < 0.5:
-            text = "This is cat"
-        if result_predict >= 0.5:
-            text = "This is dog"
 
         #line_bot_api.reply_message(event.reply_token,ImageSendMessage(original_content_url=FQDN+"/static/"+event.message.id+".jpg",preview_image_url=FQDN+"/static/"+event.message.id+".jpg"))
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=text))
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=result_predict))
 
 if __name__ == "__main__":
     app.run()
