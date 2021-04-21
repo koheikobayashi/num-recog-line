@@ -7,7 +7,7 @@ from linebot.exceptions import (InvalidSignatureError)
 from linebot.models import (MessageEvent, TextMessage, TextSendMessage, ImageMessage, ImageSendMessage)
 
 from keras.preprocessing import image
-from tensorflow.keras.models import load_model
+from keras.models import load_model
 from PIL import Image
 
 
