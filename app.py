@@ -46,7 +46,7 @@ def handle_image_message(event):
         f.write(message_content.content)
 
         im = Image.open("./static/"+event.message.id+".jpg")
-        im_crop = im.crop((0, 0, 100, 100)).save("./static/"+event.message.id+".jpg", quality=95)
+        im_crop = im.crop((0, 0, 100, 100)).save("./static/test.jpg", quality=95)
         #test_url = "./static/"+event.message.id+".jpg"
         #img = image.load_img(test_url, target_size=(150, 150))
         img = image.load_img(im_crop, grayscale=False, target_size=(28, 28))
