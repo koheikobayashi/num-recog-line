@@ -40,27 +40,27 @@ def callback():
 
 @handler.add(MessageEvent, message=ImageMessage)
 def handle_image_message(event):
+    num = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ''] 
     message_content = line_bot_api.get_message_content(event.message.id)
     # 取得した画像ファイル
     with open("static/"+event.message.id+".jpg", "wb") as f:
         f.write(message_content.content)
 
-        im = Image.open("./static/"+event.message.id+".jpg")
-        im_crop = im.crop((0, 0, 100, 100)).save("./static/test.jpg", quality=95)
-        #test_url = "./static/"+event.message.id+".jpg"
-        #img = image.load_img(test_url, target_size=(150, 150))
-        img = image.load_img(im_crop, grayscale=False, target_size=(28, 28))
-        x = image.img_to_array(img)
-        x = np.expand_dims(x, axis=0)
-        x = x / 255.0
-        # モデルのロード
-        # model = load_model('dog_cat.h5')
-        model = load_model('color_model.h5')
-        result_predict = model.predict(x)
+    img = Image.open("static/"+event.message.id+".jpg")
+    img_resize = img.resize((400, 100))
+    img_resize.crop((0, 0, 100, 100)).save("static/"+event.message.id+"-test.jpg", quality=95)
+    img = image.load_img("static/"+event.message.id+"-test.jpg", grayscale=False, target_size=(28, 28))
+    x = image.img_to_array(img)
+    x = np.expand_dims(x, axis=0)
+    x = x / 255.0
+    model = load_model('color_model.h5')
+    result_predict = model.predict_classes(x)
+    num[result_predict[0]]
 
 
-        #line_bot_api.reply_message(event.reply_token,ImageSendMessage(original_content_url=FQDN+"/static/"+event.message.id+".jpg",preview_image_url=FQDN+"/static/"+event.message.id+".jpg"))
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=result_predict))
+
+    #line_bot_api.reply_message(event.reply_token,ImageSendMessage(original_content_url=FQDN+"/static/"+event.message.id+".jpg",preview_image_url=FQDN+"/static/"+event.message.id+".jpg"))
+    line_bot_api.reply_message(event.reply_token, TextSendMessage(text=result_predict))
 
 if __name__ == "__main__":
     app.run()
